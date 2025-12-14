@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* CARD */
+.card-proyecto {
+    background-color: white;
+    width: 300px;
+    padding: 20px;          /* Box Model */
+    border: 1px solid #ccc; /* Box Model */
+    border-radius: 10px;
+}
+
+/* ID */
+#proyecto-videojuego {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#proyecto-web {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.imagen-proyecto {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #eaeaea;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.btn-proyecto {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #2980b9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-proyecto:hover {
+    background-color: #1f6391;
+}
