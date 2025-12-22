@@ -1,13 +1,13 @@
 .eventos {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
     gap: 20px;
-    flex-wrap: wrap;
     margin-top: 20px;
 }
 
 /* TARJETA */
 .evento {
-    max-width: 360px;
+    width: 100%;
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
@@ -78,3 +78,10 @@
 .btn-secundario:hover {
     background-color: #4b5563;
 }
+
+@media (max-width: 768px) {
+    .eventos {
+        grid-template-columns: 1fr;
+    }
+}
+

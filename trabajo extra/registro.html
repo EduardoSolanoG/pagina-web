@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Participante</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>Sistema de Eventos</h1>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="registro.html" class="activo">Registrar Participante</a>
+            <a href="participantes.html">Ver Participantes</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main>
+        <h2>Registro de Participante</h2>
+
+        <form class="formulario">
+
+            <!-- SELECCIÓN DE EVENTO -->
+            <fieldset>
+                <legend>Evento</legend>
+
+                <label for="evento">Selecciona un evento</label>
+                <select id="evento" required>
+                    <option value="">-- Selecciona --</option>
+                    <option>Leyendas en Combate: México Ancestral</option>
+                    <option>Mitos del Norte</option>
+                    <option>Guerreros del Anáhuac</option>
+                    <option>Leyendas Urbanas MX</option>
+                </select>
+            </fieldset>
+
+            <!-- TIPO DE PARTICIPANTE -->
+            <fieldset>
+                <legend>Tipo de Participante</legend>
+
+                <label>
+                    <input type="radio" name="tipo" required>
+                    Asistente
+                </label>
+
+                <label>
+                    <input type="radio" name="tipo">
+                    Ponente
+                </label>
+            </fieldset>
+
+            <!-- DATOS GENERALES -->
+            <fieldset>
+                <legend>Datos Generales</legend>
+
+                <label>Nombre completo
+                    <input type="text" required>
+                </label>
+
+                <label>Email
+                    <input type="email" required>
+                </label>
+
+                <label>Teléfono
+                    <input type="tel">
+                </label>
+
+                <label>Empresa / Institución
+                    <input type="text">
+                </label>
+
+                <label>Ciudad / País
+                    <input type="text">
+                </label>
+            </fieldset>
+
+            <!-- DATOS ASISTENTE -->
+            <fieldset>
+                <legend>Datos del Asistente</legend>
+
+                <label>Nivel de experiencia
+                    <select>
+                        <option>Básico</option>
+                        <option>Intermedio</option>
+                        <option>Avanzado</option>
+                    </select>
+                </label>
+
+                <label>Áreas de interés
+                    <input type="text">
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Requiere certificado
+                </label>
+            </fieldset>
+
+            <!-- DATOS PONENTE -->
+            <fieldset>
+                <legend>Datos del Ponente</legend>
+
+                <label>Título de la ponencia
+                    <input type="text">
+                </label>
+
+                <label>Duración estimada
+                    <input type="text">
+                </label>
+
+                <label>Requerimientos técnicos
+                    <textarea></textarea>
+                </label>
+
+                <label>Biografía profesional
+                    <textarea></textarea>
+                </label>
+            </fieldset>
+
+            <!-- BOTONES -->
+            <div class="acciones-form">
+                <button type="submit">Registrar</button>
+                <a href="index.html" class="btn-cancelar">Cancelar</a>
+            </div>
+
+        </form>
+    </main>
+
+</body>
+</html>
