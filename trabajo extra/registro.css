@@ -68,3 +68,42 @@ button:hover {
 .btn-cancelar:hover {
     background-color: #4b5563;
 }
+
+.obligatorio {
+    color: red;
+}
+
+.grupo {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+input:required:invalid {
+    border: 2px solid red;
+}
+
+input:required:valid {
+    border: 2px solid green;
+}
+
+.acciones-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#cancelar {
+    background-color: #9ca3af;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cancelar:hover {
+    background-color: #6b7280;
+}

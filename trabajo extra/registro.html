@@ -9,127 +9,82 @@
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <h1>Sistema de Eventos</h1>
-        <nav class="nav">
-            <a href="index.html">Inicio</a>
-            <a href="registro.html" class="activo">Registrar Participante</a>
-            <a href="participantes.html">Ver Participantes</a>
-        </nav>
-    </header>
+<header class="header">
+    <h1>Sistema de Eventos</h1>
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="registro.html" class="activo">Registrar Participante</a>
+        <a href="participantes.html">Ver Participantes</a>
+    </nav>
+</header>
 
-    <!-- CONTENIDO -->
-    <main>
-        <h2>Registro de Participante</h2>
+<main>
+    <h2>Registro de Participantes</h2>
 
-        <form class="formulario">
+    <form id="formRegistro">
 
-            <!-- SELECCIÓN DE EVENTO -->
-            <fieldset>
-                <legend>Evento</legend>
+        <!-- CAMPOS GENERALES -->
+        <label>Nombre <span class="obligatorio">*</span></label>
+        <input type="text" id="nombre" required>
 
-                <label for="evento">Selecciona un evento</label>
-                <select id="evento" required>
-                    <option value="">-- Selecciona --</option>
-                    <option>Leyendas en Combate: México Ancestral</option>
-                    <option>Mitos del Norte</option>
-                    <option>Guerreros del Anáhuac</option>
-                    <option>Leyendas Urbanas MX</option>
-                </select>
-            </fieldset>
+        <label>Email <span class="obligatorio">*</span></label>
+        <input type="email" id="email" required>
 
-            <!-- TIPO DE PARTICIPANTE -->
-            <fieldset>
-                <legend>Tipo de Participante</legend>
+        <label>Tipo <span class="obligatorio">*</span></label>
+        <select id="tipo" required>
+            <option value="">Selecciona</option>
+            <option value="Asistente">Asistente</option>
+            <option value="Ponente">Ponente</option>
+        </select>
 
-                <label>
-                    <input type="radio" name="tipo" required>
-                    Asistente
-                </label>
+        <!-- ASISTENTES -->
+        <div id="camposAsistente" class="grupo">
+            <h3>Datos del Asistente</h3>
 
-                <label>
-                    <input type="radio" name="tipo">
-                    Ponente
-                </label>
-            </fieldset>
+            <label>Nivel de experiencia <span class="obligatorio">*</span></label>
+            <select id="experiencia">
+                <option value="Básico">Básico</option>
+                <option value="Intermedio">Intermedio</option>
+                <option value="Avanzado">Avanzado</option>
+            </select>
 
-            <!-- DATOS GENERALES -->
-            <fieldset>
-                <legend>Datos Generales</legend>
+            <label>Áreas de interés</label>
+            <input type="text" id="intereses" placeholder="Ej. tecnología, cultura">
 
-                <label>Nombre completo
-                    <input type="text" required>
-                </label>
+            <label>
+                <input type="checkbox" id="certificado">
+                Requiere certificado
+            </label>
+        </div>
 
-                <label>Email
-                    <input type="email" required>
-                </label>
+        <!-- PONENTES -->
+        <div id="camposPonente" class="grupo">
+            <h3>Datos del Ponente</h3>
 
-                <label>Teléfono
-                    <input type="tel">
-                </label>
+            <label>Título de la ponencia <span class="obligatorio">*</span></label>
+            <input type="text" id="titulo">
 
-                <label>Empresa / Institución
-                    <input type="text">
-                </label>
+            <label>Duración estimada</label>
+            <input type="text" id="duracion" placeholder="Ej. 45 minutos">
 
-                <label>Ciudad / País
-                    <input type="text">
-                </label>
-            </fieldset>
+            <label>Requerimientos técnicos</label>
+            <input type="text" id="requerimientos">
 
-            <!-- DATOS ASISTENTE -->
-            <fieldset>
-                <legend>Datos del Asistente</legend>
+            <label>Biografía profesional</label>
+            <textarea id="biografia"></textarea>
 
-                <label>Nivel de experiencia
-                    <select>
-                        <option>Básico</option>
-                        <option>Intermedio</option>
-                        <option>Avanzado</option>
-                    </select>
-                </label>
+            <label>Redes sociales / Links</label>
+            <input type="text" id="redes">
+        </div>
 
-                <label>Áreas de interés
-                    <input type="text">
-                </label>
+        <div class="acciones-form">
+            <button type="submit">Registrar</button>
+            <button type="button" id="cancelar">Cancelar</button>
+        </div>
 
-                <label>
-                    <input type="checkbox">
-                    Requiere certificado
-                </label>
-            </fieldset>
+    </form>
+</main>
 
-            <!-- DATOS PONENTE -->
-            <fieldset>
-                <legend>Datos del Ponente</legend>
-
-                <label>Título de la ponencia
-                    <input type="text">
-                </label>
-
-                <label>Duración estimada
-                    <input type="text">
-                </label>
-
-                <label>Requerimientos técnicos
-                    <textarea></textarea>
-                </label>
-
-                <label>Biografía profesional
-                    <textarea></textarea>
-                </label>
-            </fieldset>
-
-            <!-- BOTONES -->
-            <div class="acciones-form">
-                <button type="submit">Registrar</button>
-                <a href="index.html" class="btn-cancelar">Cancelar</a>
-            </div>
-
-        </form>
-    </main>
-
+<script src="registro.js"></script>
 </body>
 </html>
