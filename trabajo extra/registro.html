@@ -2,28 +2,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registrar Participante</title>
-
+    <title>Registro de Participantes</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="registro.css">
 </head>
 <body>
 
 <header class="header">
-    <h1>Sistema de Eventos</h1>
-    <nav class="nav">
-        <a href="index.html">Inicio</a>
-        <a href="registro.html" class="activo">Registrar Participante</a>
-        <a href="participantes.html">Ver Participantes</a>
-    </nav>
+    <h1>Registro de Participantes</h1>
 </header>
 
 <main>
-    <h2>Registro de Participantes</h2>
-
     <form id="formRegistro">
 
-        <!-- CAMPOS GENERALES -->
         <label>Nombre <span class="obligatorio">*</span></label>
         <input type="text" id="nombre" required>
 
@@ -37,19 +27,26 @@
             <option value="Ponente">Ponente</option>
         </select>
 
-        <!-- ASISTENTES -->
-        <div id="camposAsistente" class="grupo">
-            <h3>Datos del Asistente</h3>
+        <label>Evento <span class="obligatorio">*</span></label>
+        <select id="evento" required>
+            <option value="">Selecciona un evento</option>
+            <option value="Leyendas en Combate: México Ancestral">Leyendas en Combate: México Ancestral</option>
+            <option value="Tecnología del Futuro">Tecnología del Futuro</option>
+            <option value="Aprendizaje Digital">Aprendizaje Digital</option>
+            <option value="Emprendimiento y Negocios">Emprendimiento y Negocios</option>
+        </select>
 
-            <label>Nivel de experiencia <span class="obligatorio">*</span></label>
+        <!-- ASISTENTE -->
+        <div id="camposAsistente">
+            <label>Nivel de experiencia</label>
             <select id="experiencia">
-                <option value="Básico">Básico</option>
+                <option value="Principiante">Principiante</option>
                 <option value="Intermedio">Intermedio</option>
                 <option value="Avanzado">Avanzado</option>
             </select>
 
             <label>Áreas de interés</label>
-            <input type="text" id="intereses" placeholder="Ej. tecnología, cultura">
+            <input type="text" id="intereses">
 
             <label>
                 <input type="checkbox" id="certificado">
@@ -57,15 +54,13 @@
             </label>
         </div>
 
-        <!-- PONENTES -->
-        <div id="camposPonente" class="grupo">
-            <h3>Datos del Ponente</h3>
-
-            <label>Título de la ponencia <span class="obligatorio">*</span></label>
+        <!-- PONENTE -->
+        <div id="camposPonente">
+            <label>Título de la ponencia</label>
             <input type="text" id="titulo">
 
             <label>Duración estimada</label>
-            <input type="text" id="duracion" placeholder="Ej. 45 minutos">
+            <input type="text" id="duracion">
 
             <label>Requerimientos técnicos</label>
             <input type="text" id="requerimientos">
@@ -73,14 +68,12 @@
             <label>Biografía profesional</label>
             <textarea id="biografia"></textarea>
 
-            <label>Redes sociales / Links</label>
+            <label>Redes sociales / links</label>
             <input type="text" id="redes">
         </div>
 
-        <div class="acciones-form">
-            <button type="submit">Registrar</button>
-            <button type="button" id="cancelar">Cancelar</button>
-        </div>
+        <button type="submit">Registrar</button>
+        <button type="button" id="cancelar">Cancelar</button>
 
     </form>
 </main>
@@ -88,3 +81,4 @@
 <script src="registro.js"></script>
 </body>
 </html>
+

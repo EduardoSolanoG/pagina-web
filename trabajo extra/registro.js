@@ -1,40 +1,30 @@
-// Referencias al formulario y campos
-const form = document.getElementById("formRegistro");
 const tipo = document.getElementById("tipo");
+const form = document.getElementById("formRegistro");
 
-const camposAsistente = document.getElementById("camposAsistente");
-const camposPonente = document.getElementById("camposPonente");
+const asistente = document.getElementById("camposAsistente");
+const ponente = document.getElementById("camposPonente");
 
-const cancelar = document.getElementById("cancelar");
+asistente.style.display = "none";
+ponente.style.display = "none";
 
-// Mostrar / ocultar campos según tipo
 tipo.addEventListener("change", () => {
-    camposAsistente.style.display = "none";
-    camposPonente.style.display = "none";
-
-    if (tipo.value === "Asistente") {
-        camposAsistente.style.display = "block";
-    } 
-    else if (tipo.value === "Ponente") {
-        camposPonente.style.display = "block";
-    }
+    asistente.style.display = tipo.value === "Asistente" ? "block" : "none";
+    ponente.style.display = tipo.value === "Ponente" ? "block" : "none";
 });
 
-// Enviar formulario
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const participante = {
         nombre: document.getElementById("nombre").value,
         email: document.getElementById("email").value,
         tipo: tipo.value,
+        evento: document.getElementById("evento").value,
 
-        // Campos asistente
         experiencia: document.getElementById("experiencia")?.value || "",
         intereses: document.getElementById("intereses")?.value || "",
         certificado: document.getElementById("certificado")?.checked || false,
 
-        // Campos ponente
         titulo: document.getElementById("titulo")?.value || "",
         duracion: document.getElementById("duracion")?.value || "",
         requerimientos: document.getElementById("requerimientos")?.value || "",
@@ -44,20 +34,16 @@ form.addEventListener("submit", function (e) {
 
     let participantes = JSON.parse(localStorage.getItem("participantes")) || [];
     participantes.push(participante);
-
     localStorage.setItem("participantes", JSON.stringify(participantes));
 
     alert("Registro exitoso");
-
     form.reset();
-    camposAsistente.style.display = "none";
-    camposPonente.style.display = "none";
+    asistente.style.display = "none";
+    ponente.style.display = "none";
 });
 
-// Botón cancelar
-cancelar.addEventListener("click", () => {
+document.getElementById("cancelar").addEventListener("click", () => {
     form.reset();
-    camposAsistente.style.display = "none";
-    camposPonente.style.display = "none";
+    asistente.style.display = "none";
+    ponente.style.display = "none";
 });
-

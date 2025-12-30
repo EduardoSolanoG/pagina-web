@@ -1,36 +1,28 @@
-const tablaAsistentes = document.getElementById("tabla-asistentes");
-const tablaPonentes = document.getElementById("tabla-ponentes");
-const totalAsistentes = document.getElementById("totalAsistentes");
-const totalPonentes = document.getElementById("totalPonentes");
+const asistentes = document.getElementById("tablaAsistentes");
+const ponentes = document.getElementById("tablaPonentes");
 
-let participantes = JSON.parse(localStorage.getItem("participantes")) || [];
+const datos = JSON.parse(localStorage.getItem("participantes")) || [];
 
-let countAsistentes = 0;
-let countPonentes = 0;
-
-participantes.forEach(p => {
+datos.forEach(p => {
     const fila = document.createElement("tr");
 
     if (p.tipo === "Asistente") {
         fila.innerHTML = `
-            <td>${p.nombre}</td>
-            <td>${p.email}</td>
-            <td>${p.empresa}</td>
-            <td>${p.experiencia}</td>
+            <td>${p.nombre || ""}</td>
+            <td>${p.email || ""}</td>
+            <td>${p.evento || "No asignado"}</td>
+            <td>${p.experiencia || ""}</td>
         `;
-        tablaAsistentes.appendChild(fila);
-        countAsistentes++;
-    } else {
+        asistentes.appendChild(fila);
+    }
+
+    if (p.tipo === "Ponente") {
         fila.innerHTML = `
-            <td>${p.nombre}</td>
-            <td>Ponencia pendiente</td>
-            <td>30 min</td>
-            <td>${p.empresa}</td>
+            <td>${p.nombre || ""}</td>
+            <td>${p.evento || "No asignado"}</td>
+            <td>${p.titulo || "Sin título"}</td>
+            <td>${p.duracion || "-"}</td>
         `;
-        tablaPonentes.appendChild(fila);
-        countPonentes++;
+        ponentes.appendChild(fila);
     }
 });
-
-totalAsistentes.textContent = countAsistentes;
-totalPonentes.textContent = countPonentes;

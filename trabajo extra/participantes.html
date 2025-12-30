@@ -3,65 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Participantes</title>
-
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="participantes.css">
 </head>
 <body>
 
 <header class="header">
-    <h1>Sistema de Eventos</h1>
-    <nav class="nav">
-        <a href="index.html">Inicio</a>
-        <a href="registro.html">Registrar Participante</a>
-        <a href="participantes.html" class="activo">Ver Participantes</a>
-    </nav>
+    <h1>Participantes Registrados</h1>
 </header>
 
 <main>
-    <h2>Participantes del Evento</h2>
 
-    <section class="contadores">
-        <div class="contador asistentes">
-            <span class="numero" id="totalAsistentes">0</span>
-            <span>Asistentes</span>
-        </div>
+<h2>Asistentes</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Evento</th>
+            <th>Experiencia</th>
+        </tr>
+    </thead>
+    <tbody id="tablaAsistentes"></tbody>
+</table>
 
-        <div class="contador ponentes">
-            <span class="numero" id="totalPonentes">0</span>
-            <span>Ponentes</span>
-        </div>
-    </section>
+<h2>Ponentes</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Evento</th>
+            <th>Ponencia</th>
+            <th>Duración</th>
+        </tr>
+    </thead>
+    <tbody id="tablaPonentes"></tbody>
+</table>
 
-    <section class="lista">
-        <h3>Asistentes</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Empresa</th>
-                    <th>Experiencia</th>
-                </tr>
-            </thead>
-            <tbody id="tabla-asistentes"></tbody>
-        </table>
-    </section>
-
-    <section class="lista">
-        <h3>Ponentes</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Ponencia</th>
-                    <th>Duración</th>
-                    <th>Empresa</th>
-                </tr>
-            </thead>
-            <tbody id="tabla-ponentes"></tbody>
-        </table>
-    </section>
 </main>
 
 <script src="participantes.js"></script>
