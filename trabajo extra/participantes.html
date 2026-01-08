@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Participantes</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,33 +14,42 @@
 
 <main>
 
-<h2>Asistentes</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Evento</th>
-            <th>Experiencia</th>
-        </tr>
-    </thead>
-    <tbody id="tablaAsistentes"></tbody>
-</table>
+    <h2>Asistentes</h2>
+    <div class="tabla-scroll">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Evento</th>
+                    <th>Experiencia</th>
+                </tr>
+            </thead>
+            <tbody id="tablaAsistentes"></tbody>
+        </table>
+    </div>
 
-<h2>Ponentes</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Evento</th>
-            <th>Ponencia</th>
-            <th>Duración</th>
-        </tr>
-    </thead>
-    <tbody id="tablaPonentes"></tbody>
-</table>
+    <h2>Ponentes</h2>
+    <div class="tabla-scroll">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Evento</th>
+                    <th>Ponencia</th>
+                    <th>Duración</th>
+                </tr>
+            </thead>
+            <tbody id="tablaPonentes"></tbody>
+        </table>
+    </div>
 
 </main>
+
+<footer class="footer">
+    <p>Sistema de Eventos © 2026</p>
+    <p>Contacto: eventos@ejemplo.com | Tel: 55 1234 5678</p>
+</footer>
 
 <script src="participantes.js"></script>
 </body>

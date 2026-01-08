@@ -16,25 +16,23 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const participante = {
-        nombre: document.getElementById("nombre").value,
-        email: document.getElementById("email").value,
+        nombre: nombre.value,
+        email: email.value,
         tipo: tipo.value,
-        evento: document.getElementById("evento").value,
-
-        experiencia: document.getElementById("experiencia")?.value || "",
-        intereses: document.getElementById("intereses")?.value || "",
-        certificado: document.getElementById("certificado")?.checked || false,
-
-        titulo: document.getElementById("titulo")?.value || "",
-        duracion: document.getElementById("duracion")?.value || "",
-        requerimientos: document.getElementById("requerimientos")?.value || "",
-        biografia: document.getElementById("biografia")?.value || "",
-        redes: document.getElementById("redes")?.value || ""
+        evento: evento.value,
+        experiencia: experiencia?.value || "",
+        intereses: intereses?.value || "",
+        certificado: certificado?.checked || false,
+        titulo: titulo?.value || "",
+        duracion: duracion?.value || "",
+        requerimientos: requerimientos?.value || "",
+        biografia: biografia?.value || "",
+        redes: redes?.value || ""
     };
 
-    let participantes = JSON.parse(localStorage.getItem("participantes")) || [];
-    participantes.push(participante);
-    localStorage.setItem("participantes", JSON.stringify(participantes));
+    let lista = JSON.parse(localStorage.getItem("participantes")) || [];
+    lista.push(participante);
+    localStorage.setItem("participantes", JSON.stringify(lista));
 
     alert("Registro exitoso");
     form.reset();
@@ -42,8 +40,13 @@ form.addEventListener("submit", (e) => {
     ponente.style.display = "none";
 });
 
-document.getElementById("cancelar").addEventListener("click", () => {
+cancelar.addEventListener("click", () => {
     form.reset();
     asistente.style.display = "none";
     ponente.style.display = "none";
 });
+
+/* Selección automática del evento */
+const params = new URLSearchParams(window.location.search);
+const eventoURL = params.get("evento");
+if (eventoURL) evento.value = eventoURL;

@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema de Eventos</title>
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="eventos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
     <h1>Sistema de Eventos</h1>
     <nav class="nav">
@@ -18,108 +19,151 @@
     </nav>
 </header>
 
+<!-- CONTENIDO -->
 <main>
+
     <h2>Eventos disponibles</h2>
-
-    <section class="filtros">
-    <input type="text" id="buscador" placeholder="Buscar evento por nombre">
-
-    <select id="categoria">
-        <option value="">Todas las categorías</option>
-        <option value="Cultural">Cultural</option>
-        <option value="Tecnología">Tecnología</option>
-        <option value="Educación">Educación</option>
-        <option value="Negocios">Negocios</option>
-    </select>
-
-    <select id="orden">
-        <option value="">Ordenar</option>
-        <option value="az">Nombre A-Z</option>
-    </select>
-</section>
-
 
     <section class="eventos">
 
         <!-- EVENTO 1 -->
-        <article class="evento" data-nombre="leyendas en combate" data-categoria="Cultural">
-            <img src="../imagenes/proyecto1.jpg" alt="Evento cultural">
+        <div class="evento" data-evento="Leyendas en Combate: México Ancestral">
+            <img src="../imagenes/proyecto1.jpg" alt="Leyendas en Combate">
+
             <div class="evento-contenido">
                 <h3>Leyendas en Combate: México Ancestral</h3>
-                <p class="fecha">📅 20 de enero de 2026</p>
-                <p class="lugar">📍 Ciudad de México</p>
-                <p class="categoria">Cultural</p>
+
+                <p class="fecha">20 de enero de 2026 | 18:00 hrs</p>
+                <p class="lugar">Ciudad de México</p>
+                <p class="categoria">Categoría: Cultura / Videojuegos</p>
+
                 <p class="descripcion">
-                    Un juego con una mezcla de historia, mitología y cultura mexicana.
+                    Presentación del primer tráiler del videojuego Leyendas en Combate:
+                    México Ancestral.
+                </p>
+
+                <p><strong>Asistentes:</strong>
+                    <span class="contador-asistentes">0</span>
+                </p>
+                <p><strong>Ponentes:</strong>
+                    <span class="contador-ponentes">0</span>
                 </p>
 
                 <div class="acciones">
-                    <a href="registro.html" class="btn btn-secundario">Registrarse</a>
+                    <a href="registro.html?evento=Leyendas en Combate: México Ancestral" class="btn">
+                        Registrar Participante
+                    </a>
                     <a href="participantes.html" class="btn btn-secundario">Ver Participantes</a>
                 </div>
-
             </div>
-        </article>
+        </div>
 
         <!-- EVENTO 2 -->
-        <article class="evento" data-nombre="Tecnología del futuro" data-categoria="Tegnologia">
-            <img src="../imagenes/evento2.jpg" alt="Evento tecnológico">
+        <div class="evento" data-evento="Tecnología del Futuro">
+            <img src="../imagenes/evento2.jpg" alt="Tecnología del Futuro">
+
             <div class="evento-contenido">
                 <h3>Tecnología del Futuro</h3>
-                <p class="fecha">📅 5 de febrero de 2026</p>
-                <p class="lugar">📍 Guadalajara</p>
-                <p class="categoria">Tecnología</p>
+
+                <p class="fecha">5 de febrero de 2026 | 16:00 hrs</p>
+                <p class="lugar">Guadalajara</p>
+                <p class="categoria">Categoría: Tecnología</p>
+
                 <p class="descripcion">
-                    Conferencias sobre innovación y desarrollo tecnológico.
+                    Conferencia sobre tendencias tecnológicas y avances en desarrollo
+                    de software.
+                </p>
+
+                <p><strong>Asistentes:</strong>
+                    <span class="contador-asistentes">0</span>
+                </p>
+                <p><strong>Ponentes:</strong>
+                    <span class="contador-ponentes">0</span>
                 </p>
 
                 <div class="acciones">
-                    <a href="registro.html" class="btn btn-secundario">Registrarse</a>
+                    <a href="registro.html?evento=Tecnología del Futuro" class="btn">
+                        Registrar Participante
+                    </a>
                     <a href="participantes.html" class="btn btn-secundario">Ver Participantes</a>
                 </div>
             </div>
-        </article>
+        </div>
 
         <!-- EVENTO 3 -->
-        <article class="evento" data-nombre="Aprendizaje Digital" data-categoria="Educación">
-            <img src="../imagenes/evento3.jpg" alt="Evento educativo">
+        <div class="evento" data-evento="Aprendizaje Digital">
+            <img src="../imagenes/evento3.jpg" alt="Aprendizaje Digital">
+
             <div class="evento-contenido">
                 <h3>Aprendizaje Digital</h3>
-                <p class="fecha">📅 12 de marzo de 2026</p>
-                <p class="lugar">📍 Monterrey</p>
-                <p class="categoria">Educación</p>
+
+                <p class="fecha">10 de marzo de 2026 | 10:00 hrs</p>
+                <p class="lugar">Monterrey</p>
+                <p class="categoria">Categoría: Educación</p>
+
                 <p class="descripcion">
-                    Talleres y charlas sobre educación en línea.
+                    Evento enfocado en plataformas educativas y aprendizaje en línea.
+                </p>
+
+                <p><strong>Asistentes:</strong>
+                    <span class="contador-asistentes">0</span>
+                </p>
+                <p><strong>Ponentes:</strong>
+                    <span class="contador-ponentes">0</span>
                 </p>
 
                 <div class="acciones">
-                    <a href="registro.html" class="btn btn-secundario">Registrarse</a>
+                    <a href="registro.html?evento=Aprendizaje Digital" class="btn">
+                             Registrar Participante
+                    </a>
                     <a href="participantes.html" class="btn btn-secundario">Ver Participantes</a>
                 </div>
             </div>
-        </article>
+        </div>
 
         <!-- EVENTO 4 -->
-        <article class="evento" data-nombre="Emprendimiento y Negocios" data-categoria="Negocios">
-            <img src="../imagenes/evento4.jpg" alt="Evento de negocios">
+        <div class="evento" data-evento="Emprendimiento y Negocios">
+            <img src="../imagenes/evento4.jpg" alt="Emprendimiento y Negocios">
+
             <div class="evento-contenido">
                 <h3>Emprendimiento y Negocios</h3>
-                <p class="fecha">📅 28 de abril de 2026</p>
-                <p class="lugar">📍 Puebla</p>
-                <p class="categoria">Negocios</p>
+
+                <p class="fecha">25 de marzo de 2026 | 12:00 hrs</p>
+                <p class="lugar">Puebla</p>
+                <p class="categoria">Categoría: Negocios</p>
+
                 <p class="descripcion">
-                    Estrategias y casos de éxito para emprendedores.
+                    Taller para emprendedores y personas interesadas en iniciar un negocio.
+                </p>
+
+                <p><strong>Asistentes:</strong>
+                    <span class="contador-asistentes">0</span>
+                </p>
+                <p><strong>Ponentes:</strong>
+                    <span class="contador-ponentes">0</span>
                 </p>
 
                 <div class="acciones">
-                    <a href="registro.html" class="btn btn-secundario">Registrarse</a>
+                    <a href="registro.html?evento=Emprendimiento y Negocios" class="btn">
+                        Registrar Participante
+                    </a>
                     <a href="participantes.html" class="btn btn-secundario">Ver Participantes</a>
                 </div>
             </div>
-        </article>
+        </div>
 
     </section>
+
 </main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>Sistema de Eventos © 2025</p>
+    <p>Contacto: pixelsombriostudio@gmail.com</p>
+</footer>
+
+<!-- JS -->
+<script src="index.js"></script>
 
 </body>
 </html>

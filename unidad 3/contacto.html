@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="estilos-contacto.css">
+</head>
+
+<body>
+
+    <h1>Formulario de Contacto</h1>
+
+    <form action="#" method="post">
+
+        <fieldset>
+            <legend>Información de contacto</legend>
+
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="55-1234-5678">
+
+            <label for="asunto">Asunto:</label>
+            <select id="asunto" name="asunto" required>
+                <option value="">Selecciona un asunto</option>
+                <option value="oferta">Oferta laboral</option>
+                <option value="colaboracion">Colaboración</option>
+                <option value="consulta">Consulta técnica</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Describe tu mensaje en detalle..." required></textarea>
+
+            <label class="terminos">
+                <input type="checkbox" required>
+                Acepto la política de privacidad y términos de uso
+            </label>
+
+        </fieldset>
+
+        <div class="botones">
+            <button type="submit">Enviar mensaje</button>
+            <button type="reset">Limpiar formulario</button>
+        </div>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* Selectores de etiqueta */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+/* Selectores de clase */
+.botones {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.terminos {
+    margin-top: 10px;
+}
+
+/* Selectores de ID */
+#nombre {
+    border: 1px solid #999;
+}
+
+#correo {
+    border: 1px solid #999;
+}
+
+/* Pseudoclases */
+input:focus, textarea:focus, select:focus {
+    border-color: blue;
+}
+
+button:hover {
+    background-color: #444;
+    color: white;
+}
+
+/* Pseudoelementos */
+label::after {
+    content: " *";
+    color: red;
+}
+
+textarea::placeholder {
+    color: gray;
+}
+
+/* Box Model */
+fieldset {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
