@@ -66,3 +66,25 @@ fieldset {
     padding: 20px;
     border-radius: 8px;
 }
+
+/* Evita que el checkbox use estilos grandes */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+/* Alinea checkbox y texto en una sola línea */
+label.terminos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+label.terminos input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  display: inline-block;
+}
