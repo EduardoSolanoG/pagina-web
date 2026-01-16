@@ -1,14 +1,22 @@
-/* Selectores de etiqueta */
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     padding: 20px;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
     text-align: center;
 }
 
+form {
+    flex: 1; /* empuja el footer hacia abajo */
+}
+
+/* Selectores de etiqueta */
 label {
     margin-top: 10px;
     display: block;
@@ -21,7 +29,7 @@ input, select, textarea {
     box-sizing: border-box;
 }
 
-/* Selectores de clase */
+/* Clases */
 .botones {
     margin-top: 15px;
     text-align: center;
@@ -31,11 +39,8 @@ input, select, textarea {
     margin-top: 10px;
 }
 
-/* Selectores de ID */
-#nombre {
-    border: 1px solid #999;
-}
-
+/* IDs */
+#nombre,
 #correo {
     border: 1px solid #999;
 }
@@ -67,7 +72,7 @@ fieldset {
     border-radius: 8px;
 }
 
-/* Evita que el checkbox use estilos grandes */
+/* Checkbox alineado */
 input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea {
@@ -76,7 +81,6 @@ textarea {
   margin-top: 5px;
 }
 
-/* Alinea checkbox y texto en una sola línea */
 label.terminos {
   display: flex;
   align-items: center;
@@ -86,15 +90,14 @@ label.terminos {
 label.terminos input[type="checkbox"] {
   width: auto;
   margin: 0;
-  display: inline-block;
 }
 
 /* FOOTER */
 .footer {
+    margin-top: auto;
     background-color: #1f2933;
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 40px;
     font-size: 14px;
 }
