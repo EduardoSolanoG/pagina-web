@@ -1,84 +1,71 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    padding: 20px;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
+  margin: 20px 0;
 }
 
-form {
-    flex: 1; /* empuja el footer hacia abajo */
+/* Contenido principal */
+.contenido {
+  flex: 1;
+  padding: 20px;
 }
 
-/* Selectores de etiqueta */
+/* Formulario */
 label {
-    margin-top: 10px;
-    display: block;
+  margin-top: 10px;
+  display: block;
 }
 
 input, select, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    box-sizing: border-box;
-}
-
-/* Clases */
-.botones {
-    margin-top: 15px;
-    text-align: center;
-}
-
-.terminos {
-    margin-top: 10px;
-}
-
-/* IDs */
-#nombre,
-#correo {
-    border: 1px solid #999;
-}
-
-/* Pseudoclases */
-input:focus, textarea:focus, select:focus {
-    border-color: blue;
-}
-
-button:hover {
-    background-color: #444;
-    color: white;
-}
-
-/* Pseudoelementos */
-label::after {
-    content: " *";
-    color: red;
-}
-
-textarea::placeholder {
-    color: gray;
-}
-
-/* Box Model */
-fieldset {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-/* Checkbox alineado */
-input:not([type="checkbox"]):not([type="radio"]),
-select,
-textarea {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.botones {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.terminos {
+  margin-top: 10px;
+}
+
+#nombre, #correo {
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: blue;
+}
+
+button:hover {
+  background-color: #444;
+  color: white;
+}
+
+label::after {
+  content: " *";
+  color: red;
+}
+
+textarea::placeholder {
+  color: gray;
+}
+
+fieldset {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 label.terminos {
@@ -87,17 +74,17 @@ label.terminos {
   gap: 8px;
 }
 
-label.terminos input[type="checkbox"] {
+label.terminos input {
   width: auto;
   margin: 0;
 }
 
-/* FOOTER */
+/* Footer */
 .footer {
-    margin-top: auto;
-    background-color: #1f2933;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
+  margin-top: auto;
+  background-color: #1f2933;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
 }
