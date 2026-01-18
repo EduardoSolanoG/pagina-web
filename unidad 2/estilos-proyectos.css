@@ -105,3 +105,63 @@ li {
     margin: 5px 0;
   }
 }
+
+/* ===== MENÚ ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f2933;
+  padding: 10px 15px;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburguesa {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .hamburguesa {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: #1f2933;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+  }
+
+  .nav.activo {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 10px 0;
+    border-top: 1px solid #444;
+  }
+}
