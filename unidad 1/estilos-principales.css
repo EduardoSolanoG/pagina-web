@@ -1,15 +1,17 @@
-/* ===== BASE (MÓVIL FIRST) ===== */
+/* ===== BASE (MOBILE FIRST) ===== */
 html, body {
   margin: 0;
   padding: 0;
 }
 
+/* ===== BODY (MODO OSCURO) ===== */
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #121212;
+  color: #f5f5f5;
 }
 
 /* ===== HEADER / NAV ===== */
@@ -23,11 +25,11 @@ body {
 }
 
 .logo {
-  color: white;
+  color: #ffffff;
   font-weight: bold;
 }
 
-/* Botón hamburguesa */
+/* Botón hamburguesa (solo móvil) */
 .hamburguesa {
   font-size: 1.8rem;
   background: none;
@@ -51,8 +53,8 @@ body {
   color: white;
   text-decoration: none;
   padding: 0.75rem;
-  border-top: 1px solid #444;
-  min-height: 44px; /* touch target */
+  border-top: 1px solid #374151;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,7 +67,7 @@ body {
 /* ===== CONTENIDO ===== */
 .contenido {
   flex: 1;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   max-width: 100%;
 }
 
@@ -76,27 +78,30 @@ body {
   gap: 1.5rem;
 }
 
+/* Imagen perfil */
 .perfil-info img {
   width: 120px;
   border-radius: 50%;
   display: block;
   margin: 0 auto;
+  border: 3px solid #2980b9;
 }
 
-/* Tipografía fluida */
+/* Tipografía */
 h1 {
-  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   text-align: center;
-  color: #2c3e50;
+  color: #ffffff;
 }
 
 .texto-destacado {
   font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   line-height: 1.6;
   text-align: center;
-  color: #444;
+  color: #d1d5db;
 }
 
+/* Datos personales */
 .perfil-datos ul {
   list-style: none;
   padding: 0;
@@ -104,16 +109,19 @@ h1 {
 }
 
 .perfil-datos li {
-  background: #eaeaea;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
+  background: #1e1e1e;
+  margin-bottom: 0.6rem;
+  padding: 0.75rem;
   font-size: 0.95rem;
+  border-radius: 6px;
+  color: #e5e7eb;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 /* ===== FOOTER ===== */
 .footer {
   background-color: #1f2933;
-  color: white;
+  color: #e5e7eb;
   text-align: center;
   padding: 1rem;
   font-size: 0.85rem;
@@ -128,10 +136,13 @@ h1 {
 
 /* ===== TABLET (768px) ===== */
 @media (min-width: 768px) {
+
+  /* Ocultar hamburguesa */
   .hamburguesa {
     display: none;
   }
 
+  /* Menú horizontal */
   .nav {
     display: flex;
     flex-direction: row;
@@ -145,26 +156,35 @@ h1 {
     padding: 0.5rem 0.75rem;
   }
 
+  /* Contenido centrado */
+  .contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 160px);
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  /* Perfil en dos columnas */
   .perfil {
     flex-direction: row;
     align-items: flex-start;
+    gap: 2rem;
   }
 
   .perfil-info,
   .perfil-datos {
     flex: 1;
   }
-
-  .contenido {
-    max-width: 900px;
-    margin: auto;
-  }
 }
 
 /* ===== DESKTOP (992px) ===== */
 @media (min-width: 992px) {
   .contenido {
-    max-width: 1100px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .texto-destacado {

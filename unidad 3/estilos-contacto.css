@@ -8,13 +8,14 @@ html, body {
   padding: 0;
 }
 
-/* ===== BODY ===== */
+/* ===== BODY (MODO OSCURO) ===== */
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  background-color: #121212;
+  color: #f5f5f5;
 }
 
 /* ===== HEADER / NAV (MÓVIL FIRST) ===== */
@@ -28,7 +29,7 @@ body {
 }
 
 .logo {
-  color: white;
+  color: #ffffff;
   font-weight: bold;
 }
 
@@ -55,8 +56,8 @@ body {
   color: white;
   text-decoration: none;
   padding: 0.75rem;
-  border-top: 1px solid #444;
-  min-height: 44px; /* touch target */
+  border-top: 1px solid #374151;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +70,15 @@ body {
 /* ===== CONTENIDO ===== */
 .contenido {
   flex: 1;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
+}
+
+/* ===== TÍTULO ===== */
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: #ffffff;
 }
 
 /* ===== FORM ===== */
@@ -77,27 +86,22 @@ form {
   max-width: 100%;
 }
 
-/* ===== TÍTULO ===== */
-h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: clamp(1.4rem, 4vw, 2rem);
-}
-
-/* ===== FIELDSET (MÓVIL) ===== */
+/* ===== FIELDSET ===== */
 fieldset {
-  background: white;
-  padding: 1.25rem;
-  border-radius: 8px;
+  background: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 10px;
   border: none;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 /* ===== CAMPOS ===== */
 label {
   font-weight: bold;
+  color: #e5e7eb;
 }
 
 input,
@@ -106,10 +110,19 @@ textarea {
   width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
+  background: #121212;
+  color: #f5f5f5;
+  border: 1px solid #374151;
+  border-radius: 6px;
 }
 
 textarea {
   min-height: 120px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
 }
 
 input:focus,
@@ -125,6 +138,7 @@ label.terminos {
   align-items: center;
   gap: 10px;
   font-weight: normal;
+  color: #d1d5db;
 }
 
 label.terminos input {
@@ -144,18 +158,27 @@ button {
   font-size: 1rem;
   cursor: pointer;
   min-height: 44px;
+  border: none;
+  border-radius: 6px;
+  background: #2980b9;
+  color: white;
+  transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background-color: #444;
-  color: white;
+  background: #1f6391;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 /* ===== FOOTER ===== */
 .footer {
   margin-top: auto;
   background-color: #1f2933;
-  color: white;
+  color: #e5e7eb;
   text-align: center;
   padding: 1rem;
   font-size: 0.85rem;
@@ -164,12 +187,13 @@ button:hover {
 /* ===== BREAKPOINT 576px ===== */
 @media (min-width: 576px) {
   .contenido {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 }
 
 /* ===== TABLET (768px+) ===== */
 @media (min-width: 768px) {
+
   .hamburguesa {
     display: none;
   }
@@ -187,14 +211,29 @@ button:hover {
     padding: 0.5rem 0.75rem;
   }
 
+  .contenido {
+    padding: 2.5rem 1rem;
+  }
+
   form {
     max-width: 700px;
     margin: auto;
   }
 
+  fieldset {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  textarea,
+  label.terminos {
+    grid-column: span 2;
+  }
+
   .botones {
     flex-direction: row;
     justify-content: center;
+    gap: 1rem;
   }
 }
 
@@ -202,15 +241,6 @@ button:hover {
 @media (min-width: 992px) {
   form {
     max-width: 900px;
-  }
-
-  fieldset {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  textarea,
-  label.terminos {
-    grid-column: span 2;
   }
 }
 

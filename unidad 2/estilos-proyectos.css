@@ -8,38 +8,42 @@ html, body {
   padding: 0;
 }
 
+/* ===== BODY (MODO OSCURO) ===== */
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  background-color: #121212;
+  color: #f5f5f5;
 }
 
-/* ===== HEADER / NAV (MÓVIL FIRST) ===== */
+/* ===== HEADER / NAV ===== */
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: flex-start; /* 🔧 control total del layout */
   background: #1f2933;
   padding: 0.75rem 1rem;
   position: relative;
 }
 
 .logo {
-  color: white;
+  color: #ffffff;
   font-weight: bold;
 }
 
+/* Botón hamburguesa */
 .hamburguesa {
   font-size: 1.8rem;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
+  margin-left: auto; /* ✅ separa "Menú" del ☰ */
 }
 
-/* Menú móvil */
+/* ===== MENÚ MÓVIL ===== */
 .nav {
   display: none;
   flex-direction: column;
@@ -54,8 +58,8 @@ body {
   color: white;
   text-decoration: none;
   padding: 0.75rem;
-  border-top: 1px solid #444;
-  min-height: 44px; /* touch target */
+  border-top: 1px solid #374151;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,80 +72,118 @@ body {
 /* ===== CONTENIDO ===== */
 main {
   flex: 1;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: clamp(1.4rem, 4vw, 2rem);
-  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: #ffffff;
 }
 
-/* ===== GRID DE PROYECTOS (MÓVIL) ===== */
+/* ===== GRID ===== */
 .contenedor {
   display: grid;
-  grid-template-columns: 1fr; /* 1 columna móvil */
-  gap: 1.25rem;
-  max-width: 100%;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
-/* ===== CARD ===== */
+/* ===== CARD PROYECTO ===== */
 .card-proyecto {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
+  background: #1e1e1e;
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .imagen-proyecto {
   width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .card-proyecto h2 {
-  font-size: 1.1rem;
+  margin-top: 0.75rem;
+  color: #ffffff;
+  font-size: 1.15rem;
 }
 
 .card-proyecto p {
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #d1d5db;
 }
 
 .card-proyecto ul {
-  padding-left: 1rem;
+  padding-left: 1.2rem;
 }
 
-/* BOTÓN */
+.card-proyecto li {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+/* ===== BOTÓN ===== */
 .btn-proyecto {
-  display: inline-block;
-  margin-top: 0.75rem;
-  padding: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
   background: #2980b9;
   color: white;
-  text-decoration: none;
-  border-radius: 5px;
+  border: none;
+  border-radius: 6px;
   min-height: 44px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-proyecto:hover {
+  background: #1f6391;
+  transform: translateY(-2px);
+}
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.modal.activo {
+  display: flex;
+}
+
+.modal-contenido {
+  background: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
 }
 
 /* ===== FOOTER ===== */
 .footer {
   margin-top: auto;
   background-color: #1f2933;
-  color: white;
+  color: #e5e7eb;
   text-align: center;
   padding: 1rem;
   font-size: 0.85rem;
 }
 
-/* ===== BREAKPOINT 576px ===== */
-@media (min-width: 576px) {
-  .contenedor {
-    gap: 1.5rem;
-  }
-}
-
-/* ===== TABLET (768px - 991px) ===== */
+/* ===== TABLET ===== */
 @media (min-width: 768px) {
   .hamburguesa {
     display: none;
@@ -150,46 +192,32 @@ h1 {
   .nav {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 1.5rem;
     position: static;
     width: auto;
+    margin-left: auto; /* ✅ empuja links a la derecha */
   }
 
   .nav a {
     border: none;
-    padding: 0.5rem 0.75rem;
   }
 
   .contenedor {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-template-columns: repeat(2, 1fr);
     max-width: 900px;
     margin: auto;
   }
-
-  .card-proyecto p {
-    font-size: 1rem;
-  }
 }
 
-/* ===== DESKTOP (992px+) ===== */
+/* ===== DESKTOP ===== */
 @media (min-width: 992px) {
   .contenedor {
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-template-columns: repeat(3, 1fr);
     max-width: 1100px;
   }
 
-  .card-proyecto {
-    transition: transform 0.3s;
-  }
-
   .card-proyecto:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
   }
 }
 
-/* ===== DESKTOP GRANDE (1200px+) ===== */
-@media (min-width: 1200px) {
-  .contenedor {
-    max-width: 1200px;
-  }
-}
