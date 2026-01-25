@@ -4,14 +4,14 @@ html, body {
   padding: 0;
 }
 
-/* ===== BODY (MODO OSCURO) ===== */
+/* ===== BODY (GAMER CLARO) ===== */
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #f5f5f5;
+  background: linear-gradient(180deg, #f0f4f8, #e6edf5);
+  color: #1f2933;
 }
 
 /* ===== HEADER / NAV ===== */
@@ -27,9 +27,10 @@ body {
 .logo {
   color: #ffffff;
   font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
-/* Botón hamburguesa (solo móvil) */
+/* Botón hamburguesa */
 .hamburguesa {
   font-size: 1.8rem;
   background: none;
@@ -38,7 +39,7 @@ body {
   cursor: pointer;
 }
 
-/* Menú móvil */
+/* ===== MENÚ MÓVIL ===== */
 .nav {
   display: none;
   flex-direction: column;
@@ -71,7 +72,7 @@ body {
   max-width: 100%;
 }
 
-/* Perfil */
+/* ===== PERFIL ===== */
 .perfil {
   display: flex;
   flex-direction: column;
@@ -84,24 +85,25 @@ body {
   border-radius: 50%;
   display: block;
   margin: 0 auto;
-  border: 3px solid #2980b9;
+  border: 4px solid #2980b9;
+  background: white;
 }
 
-/* Tipografía */
+/* ===== TIPOGRAFÍA ===== */
 h1 {
   font-size: clamp(1.5rem, 4vw, 2.2rem);
   text-align: center;
-  color: #ffffff;
+  color: #1f2933;
 }
 
 .texto-destacado {
   font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   line-height: 1.6;
   text-align: center;
-  color: #d1d5db;
+  color: #374151;
 }
 
-/* Datos personales */
+/* ===== DATOS PERSONALES ===== */
 .perfil-datos ul {
   list-style: none;
   padding: 0;
@@ -109,13 +111,14 @@ h1 {
 }
 
 .perfil-datos li {
-  background: #1e1e1e;
+  background: #ffffff;
   margin-bottom: 0.6rem;
-  padding: 0.75rem;
+  padding: 0.8rem;
   font-size: 0.95rem;
-  border-radius: 6px;
-  color: #e5e7eb;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  border-radius: 8px;
+  color: #1f2933;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  border-left: 4px solid #2980b9;
 }
 
 /* ===== FOOTER ===== */
@@ -137,16 +140,14 @@ h1 {
 /* ===== TABLET (768px) ===== */
 @media (min-width: 768px) {
 
-  /* Ocultar hamburguesa */
   .hamburguesa {
     display: none;
   }
 
-  /* Menú horizontal */
   .nav {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 1.5rem;
     position: static;
     width: auto;
   }
@@ -156,7 +157,6 @@ h1 {
     padding: 0.5rem 0.75rem;
   }
 
-  /* Contenido centrado */
   .contenido {
     display: flex;
     flex-direction: column;
@@ -167,11 +167,10 @@ h1 {
     margin: auto;
   }
 
-  /* Perfil en dos columnas */
   .perfil {
     flex-direction: row;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .perfil-info,
